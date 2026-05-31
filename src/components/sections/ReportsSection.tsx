@@ -44,6 +44,12 @@ const reports = [
     filename: '6.Group2_LLMValley_FinalReport-492.pdf',
     color: '#d4744a',
   },
+  {
+    icon: '📝',
+    title: 'TODO / Backlog Document',
+    filename: 'Logs.pdf',
+    color: '#8b6fb9',
+  },
 ];
 
 export default function ReportsSection() {
