@@ -172,7 +172,7 @@ export default function RelationshipSection() {
         </FadeIn>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 900px) {
           #relationships .container > div:nth-child(2) { grid-template-columns: 1fr !important; }
           #relationships .container > div:nth-child(5) { grid-template-columns: 1fr !important; }

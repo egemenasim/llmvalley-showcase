@@ -146,7 +146,7 @@ export default function ArchitectureSection() {
         </FadeIn>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 900px) {
           #architecture .container > div:last-child > div { grid-template-columns: 1fr !important; }
         }

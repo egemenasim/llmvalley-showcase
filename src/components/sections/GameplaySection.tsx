@@ -25,6 +25,58 @@ const scenes = [
   },
 ];
 
+const userManualSections = [
+
+  {
+    icon: '▶️',
+    title: 'Starting the Game',
+    color: '#d4924a',
+    content: '1. Launch the game\n2. Click API Key on the Main Menu\n3. Enter your OpenRouter API Key\n4. Save the key\n5. Click Play',
+  },
+  {
+    icon: '⌨️',
+    title: 'Controls',
+    color: '#6aaad4',
+    content: 'W/A/S/D or Arrow Keys: Move\nE: Interact\nLeft Mouse: Use Tool/Item\nI: Open Inventory\n1-0: Select Hotbar Slot\nHold Z: Drop Item Stack',
+  },
+  {
+    icon: '💬',
+    title: 'Talking to NPCs',
+    color: '#9a7ad4',
+    content: '1. Approach an NPC\n2. Press E to open dialogue\n3. Type your message\n4. Submit and wait for response\n\nNPCs respond based on: Personality, Previous conversations, Relationship status, Context',
+  },
+  {
+    icon: '🌾',
+    title: 'Farming',
+    color: '#5a9a4a',
+    content: '1. Equip a farming tool\n2. Prepare the soil\n3. Plant seeds\n4. Water crops regularly\n5. Wait for crops to grow\n6. Harvest mature crops',
+  },
+  {
+    icon: '🐟',
+    title: 'Fishing',
+    color: '#4a9ad4',
+    content: '1. Equip the fishing rod\n2. Move near a fishing area\n3. Start fishing\n4. Receive randomized catches and rewards based on your skill',
+  },
+  {
+    icon: '🎒',
+    title: 'Inventory',
+    color: '#c8a830',
+    content: 'Store collected items, equip tools, manage resources, and organize farming materials. Use number keys (1-0) to quickly switch between hotbar slots.',
+  },
+  {
+    icon: '💾',
+    title: 'Saving Progress',
+    color: '#7a6ad4',
+    content: 'Game progress is automatically stored locally. Data includes: Inventory, Currency, Relationships, Calendar progress, and Conversation history.',
+  },
+  {
+    icon: '🔧',
+    title: 'Troubleshooting',
+    color: '#d4744a',
+    content: 'NPC no response: Check API key and internet connection\nGame cannot save: Verify file write permissions\n\nLLM Valley is a prototype. Some features may be incomplete.',
+  },
+];
+
 export default function GameplaySection() {
   return (
     <section id="gameplay" style={{ padding: 'var(--space-section-desktop) 0', background: 'rgba(255,255,255,0.25)' }}>
@@ -99,13 +151,60 @@ export default function GameplaySection() {
         </div>
       </div>
 
-      <style>{`
+      <div className="container" id="user-manual">
+        {/* User Manual */}
+        <FadeIn>
+          <div style={{ textAlign: 'center', maxWidth: 720, margin: '64px auto 72px' }}>
+            <div className="label-eyebrow" style={{ marginBottom: 14 }}>Guide & Tutorial</div>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: 20 }}>
+              LLM Valley - User Manual
+            </h2>
+            <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+              Everything you need to know to play LLM Valley. From controls and gameplay mechanics to NPC interaction and progression systems.
+            </p>
+          </div>
+        </FadeIn>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }}>
+          {userManualSections.map((section, i) => (
+            <FadeIn key={section.title} delay={i * 0.06}>
+              <div style={{
+                background: 'var(--glass-bg)',
+                backdropFilter: 'var(--glass-blur)', WebkitBackdropFilter: 'var(--glass-blur)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: 'var(--radius-lg)', padding: 24,
+                boxShadow: 'var(--shadow-soft)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                display: 'flex', flexDirection: 'column' as const, gap: 12,
+                height: '100%',
+              }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)'; (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-float)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-soft)'; }}
+              >
+                <div style={{
+                  width: 44, height: 44, borderRadius: 'var(--radius-sm)',
+                  background: `${section.color}22`,
+                  border: `1px solid ${section.color}44`,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22,
+                  flexShrink: 0,
+                }}>{section.icon}</div>
+                <div style={{ display: 'flex', flexDirection: 'column' as const, flex: 1 }}>
+                  <h4 style={{ fontSize: 16, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 8 }}>{section.title}</h4>
+                  <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--text-secondary)', whiteSpace: 'pre-line' }}>{section.content}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+      <style suppressHydrationWarning>{`
         @media (max-width: 900px) {
           #gameplay .container > div:nth-child(2) { grid-template-columns: 1fr 1fr !important; }
           #gameplay .container > div:nth-child(4) { grid-template-columns: 1fr !important; }
+          #gameplay .container:last-child > div:nth-child(2) { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 600px) {
           #gameplay .container > div:nth-child(2) { grid-template-columns: 1fr !important; }
+          #gameplay .container:last-child > div:nth-child(2) { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

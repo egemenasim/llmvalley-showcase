@@ -2,6 +2,7 @@
 import Nav from '@/components/Nav';
 import HeroSection from '@/components/sections/HeroSection';
 import OverviewSection from '@/components/sections/OverviewSection';
+import ReportsSection from '@/components/sections/ReportsSection';
 import GameplaySection from '@/components/sections/GameplaySection';
 import AiDialogueSection from '@/components/sections/AiDialogueSection';
 import RelationshipSection from '@/components/sections/RelationshipSection';
@@ -17,6 +18,7 @@ export default function Home() {
       <Nav />
       <HeroSection />
       <OverviewSection />
+      <ReportsSection />
       <GameplaySection />
       <AiDialogueSection />
       <RelationshipSection />

@@ -77,7 +77,7 @@ export default function HeroSection() {
                   fontSize: 12, fontWeight: 600, letterSpacing: '0.10em', textTransform: 'uppercase' as const,
                   color: 'var(--accent-green)',
                 }}>
-                  Senior Graduation Project · SENG/CENG 491/492
+                  Senior Graduation Project · SENG/CMPE 491/492
                 </div>
               </div>
             </FadeIn>
@@ -273,11 +273,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 900px) {
-          #hero .container > div { grid-template-columns: 1fr !important; gap: 48px !important; }
-        }
-      `}</style>
+      {/* Responsive styles moved to globals.css to prevent hydration mismatches */}
     </section>
   );
 }

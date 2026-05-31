@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 
 const links = [
   { label: 'Overview', href: '#overview' },
+  { label: 'Reports', href: '#reports' },
   { label: 'Gameplay', href: '#gameplay' },
+  { label: 'User Manual', href: '#user-manual' },
   { label: 'AI Dialogue', href: '#ai-dialogue' },
   { label: 'Architecture', href: '#architecture' },
   { label: 'Technology', href: '#technology' },

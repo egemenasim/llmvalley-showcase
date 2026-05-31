@@ -78,7 +78,7 @@ export default function FooterSection() {
           </div>
 
           <div style={{ fontSize: 13, color: 'var(--text-muted)', textAlign: 'center' }}>
-            Senior Graduation Project · SENG/CENG 491/492 · TED University · Spring 2026
+            Senior Graduation Project · SENG/CMPE 491/492 · TED University · Spring 2026
           </div>
 
           <div style={{ display: 'flex', gap: 20 }}>
@@ -104,7 +104,7 @@ export default function FooterSection() {
         </div>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 700px) {
           footer .container > div:last-child { flex-direction: column !important; align-items: center !important; text-align: center; }
         }

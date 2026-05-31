@@ -128,7 +128,7 @@ export default function TestingSection() {
         </div>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 900px) {
           #testing .container > div:last-child { grid-template-columns: 1fr !important; }
         }

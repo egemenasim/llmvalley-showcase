@@ -91,7 +91,7 @@ export default function OverviewSection() {
         </FadeIn>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 900px) {
           #overview .container > div:nth-child(2) { grid-template-columns: 1fr !important; }
           #overview .container > div:nth-child(3) { grid-template-columns: 1fr !important; }

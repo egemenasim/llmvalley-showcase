@@ -106,7 +106,7 @@ export default function TechnologySection() {
         </div>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 1000px) {
           #technology .container > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
         }

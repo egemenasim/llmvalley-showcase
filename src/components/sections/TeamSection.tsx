@@ -51,7 +51,7 @@ export default function TeamSection() {
               Built by four students
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--text-secondary)' }}>
-              LLM Valley was created as the SENG/CENG 491/492 Senior Graduation Project at TED University, Spring 2026. A 4-person team, one semester, one playable demo.
+              LLM Valley was created as the SENG/CMPE 491/492 Senior Graduation Project at TED University, Spring 2026. A 4-person team, one semester, one playable demo.
             </p>
           </div>
         </FadeIn>
@@ -111,13 +111,13 @@ export default function TeamSection() {
               background: 'rgba(90,154,74,0.10)', border: '1px solid rgba(90,154,74,0.22)',
               fontSize: 13, fontWeight: 600, color: 'var(--text-secondary)',
             }}>
-              🎓 TED University · SENG/CENG 491 / SENG/CENG 492 · Spring 2026
+              🎓 TED University · SENG/CMPE 491 / SENG/CMPE 492 · Spring 2026
             </span>
           </div>
         </FadeIn>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 750px) {
           #team .container > div:nth-child(2) { grid-template-columns: 1fr !important; }
         }

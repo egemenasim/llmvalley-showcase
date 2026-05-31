@@ -212,3 +212,8 @@ body::before {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
+
+/* Responsive tweaks moved from inline components to avoid hydration mismatches */
+@media (max-width: 900px) {
+  #hero .container > div { grid-template-columns: 1fr !important; gap: 48px !important; }
+}

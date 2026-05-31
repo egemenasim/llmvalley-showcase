@@ -130,7 +130,7 @@ export default function AiDialogueSection() {
         </FadeIn>
       </div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 768px) {
           #ai-dialogue .container > div:last-child { grid-template-columns: 1fr !important; }
           #ai-dialogue .container > div:last-child > div { margin-top: 0 !important; }
