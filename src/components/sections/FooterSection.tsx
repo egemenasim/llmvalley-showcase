@@ -38,8 +38,9 @@ export default function FooterSection() {
               A senior graduation project demonstrating that free-text NPC conversation, powered by open-access LLMs, is achievable in a real-time Unity game today.
             </p>
             <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); alert("The GitHub repository is currently private pending a security review to remove sensitive API keys. It will be made public shortly."); }}
+              href="https://github.com/egemenasim/LLMValley"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 padding: '14px 32px', borderRadius: 'var(--radius-pill)',
@@ -88,10 +89,9 @@ export default function FooterSection() {
               { label: 'Architecture', href: '#architecture' },
               { label: 'GitHub', href: 'https://github.com/egemenasim/LLMValley' },
             ].map(l => (
-              <a key={l.label} href={l.label === 'GitHub' ? '#' : l.href}
-                target={l.href.startsWith('http') && l.label !== 'GitHub' ? '_blank' : undefined}
-                rel={l.href.startsWith('http') && l.label !== 'GitHub' ? 'noopener noreferrer' : undefined}
-                onClick={l.label === 'GitHub' ? (e) => { e.preventDefault(); alert("The GitHub repository is currently private pending a security review to remove sensitive API keys. It will be made public shortly."); } : undefined}
+              <a key={l.label} href={l.label === 'GitHub' ? 'https://github.com/egemenasim/LLMValley' : l.href}
+                target={l.href.startsWith('http') || l.label === 'GitHub' ? '_blank' : undefined}
+                rel={l.href.startsWith('http') || l.label === 'GitHub' ? 'noopener noreferrer' : undefined}
                 style={{
                   fontSize: 13, color: 'var(--text-muted)', textDecoration: 'none',
                   fontWeight: 500, transition: 'color 0.2s ease',
