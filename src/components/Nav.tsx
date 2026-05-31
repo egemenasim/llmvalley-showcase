@@ -74,7 +74,7 @@ export default function Nav() {
         </div>
 
         {/* CTA */}
-        <a href="#" onClick={(e) => { e.preventDefault(); alert("The GitHub repository is currently private pending a security review to remove sensitive API keys. It will be made public shortly."); }}
+        <a href="https://github.com/egemenasim/LLMValley" target="_blank" rel="noopener noreferrer"
           style={{
             textDecoration: 'none', fontSize: 14, fontWeight: 600,
             color: '#fff', padding: '8px 18px',
